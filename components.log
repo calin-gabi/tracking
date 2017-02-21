@@ -1,0 +1,187 @@
+16-12-03 18:25:43 HUMANOOABIsMBP2 INFO [components.core.boot:41] - Components started successfully on port 4016
+16-12-04 12:19:37 HUMANOOABIsMBP2 INFO [components.core.boot:42] - Components started successfully on port 4016
+16-12-04 12:23:46 HUMANOOABIsMBP2 INFO [components.core.boot:42] - Components started successfully on port 4016
+16-12-04 13:29:00 HUMANOOABIsMBP2 INFO [components.core.boot:43] - Components started successfully on port 4016
+16-12-04 13:35:10 HUMANOOABIsMBP2 INFO [components.core.boot:43] - Components started successfully on port 4016
+16-12-04 13:45:57 HUMANOOABIsMBP2 INFO [components.core.boot:43] - Components started successfully on port 4016
+16-12-04 14:32:29 HUMANOOABIsMBP2 ERROR [components.ctrl.template:18] - template not found: nil
+16-12-04 14:36:40 HUMANOOABIsMBP2 INFO [components.core.boot:43] - Components started successfully on port 4016
+16-12-04 14:36:56 HUMANOOABIsMBP2 ERROR [components.ctrl.template:18] - template not found: nil
+16-12-04 14:40:55 HUMANOOABIsMBP2 ERROR [components.ctrl.template:18] - template not found: nil
+16-12-04 14:48:28 HUMANOOABIsMBP2 ERROR [components.ctrl.template:18] - template not found: nil
+16-12-04 14:49:30 HUMANOOABIsMBP2 ERROR [components.ctrl.template:18] - template not found: nil
+16-12-04 14:50:16 HUMANOOABIsMBP2 ERROR [components.ctrl.template:18] - template not found: nil
+16-12-04 14:51:50 HUMANOOABIsMBP2 ERROR [components.ctrl.template:18] - template not found: nil
+16-12-04 14:52:27 HUMANOOABIsMBP2 ERROR [components.ctrl.template:18] - template not found: nil
+16-12-04 14:57:09 HUMANOOABIsMBP2 ERROR [components.ctrl.template:18] - template not found: nil
+16-12-04 14:57:49 HUMANOOABIsMBP2 INFO [components.core.boot:43] - Components started successfully on port 4016
+16-12-04 14:57:54 HUMANOOABIsMBP2 ERROR [components.ctrl.template:18] - template not found: nil
+16-12-04 14:59:29 HUMANOOABIsMBP2 ERROR [components.ctrl.template:18] - template not found: nil
+16-12-04 15:17:28 HUMANOOABIsMBP2 INFO [components.core.boot:45] - Components started successfully on port 4016
+16-12-05 09:07:03 UnknownHost INFO [components.core.boot:45] - Components started successfully on port 4016
+16-12-05 09:11:56 UnknownHost INFO [components.core.boot:45] - Components started successfully on port 4016
+16-12-05 09:25:38 UnknownHost ERROR [components.ctrl.template:18] - template not found: login
+16-12-05 09:37:02 UnknownHost INFO [components.core.boot:47] - Components started successfully on port 4016
+16-12-05 18:54:41 HUMANOOABIsMBP2 INFO [components.core.boot:48] - Components started successfully on port 4016
+16-12-06 07:15:46 UnknownHost INFO [components.core.boot:48] - Components started successfully on port 4016
+16-12-06 08:02:37 UnknownHost INFO [components.core.boot:48] - Components started successfully on port 4016
+16-12-06 08:15:26 UnknownHost INFO [components.core.boot:48] - Components started successfully on port 4016
+16-12-06 08:18:45 UnknownHost INFO [components.core.boot:48] - Components started successfully on port 4016
+16-12-06 08:20:59 UnknownHost INFO [components.core.boot:49] - Components started successfully on port 4016
+16-12-06 08:26:01 UnknownHost INFO [components.core.boot:49] - Components started successfully on port 4016
+16-12-06 08:30:40 UnknownHost ERROR [components.ctrl.register:48] - clojure.lang.PersistentArrayMap cannot be cast to java.lang.String
+16-12-06 08:31:46 UnknownHost ERROR [components.ctrl.register:48] - clojure.lang.PersistentArrayMap cannot be cast to java.lang.String
+16-12-06 08:32:50 UnknownHost ERROR [components.ctrl.register:47] - clojure.lang.PersistentArrayMap cannot be cast to java.lang.String
+16-12-06 08:33:37 UnknownHost ERROR [components.ctrl.register:47] - clojure.lang.PersistentArrayMap cannot be cast to java.lang.String
+16-12-06 08:34:30 UnknownHost INFO [components.core.boot:49] - Components started successfully on port 4016
+16-12-06 08:34:45 UnknownHost ERROR [components.ctrl.register:47] - clojure.lang.PersistentArrayMap cannot be cast to java.lang.String
+16-12-06 08:36:27 UnknownHost ERROR [components.ctrl.register:48] - clojure.lang.PersistentArrayMap cannot be cast to java.lang.String
+16-12-06 08:38:18 UnknownHost ERROR [components.ctrl.register:48] - clojure.lang.PersistentArrayMap cannot be cast to java.lang.String
+16-12-06 08:39:52 UnknownHost ERROR [components.ctrl.register:48] - clojure.lang.PersistentArrayMap cannot be cast to java.lang.String
+16-12-06 08:41:28 UnknownHost ERROR [components.ctrl.register:48] - clojure.lang.PersistentArrayMap cannot be cast to java.lang.String
+16-12-06 08:41:58 UnknownHost ERROR [components.ctrl.register:48] - clojure.lang.PersistentArrayMap cannot be cast to java.lang.String
+16-12-06 08:42:46 UnknownHost INFO [components.core.boot:49] - Components started successfully on port 4016
+16-12-06 08:44:43 UnknownHost ERROR [components.ctrl.register:48] - java.lang.String cannot be cast to clojure.lang.IFn
+16-12-06 09:34:33 UnknownHost INFO [components.core.boot:49] - Components started successfully on port 4016
+16-12-06 14:23:08 UnknownHost INFO [components.core.boot:50] - Components started successfully on port 4016
+16-12-06 14:37:19 UnknownHost INFO [components.core.boot:50] - Components started successfully on port 4016
+16-12-06 15:15:19 UnknownHost INFO [components.core.boot:50] - Components started successfully on port 4016
+16-12-06 15:23:39 UnknownHost INFO [components.core.boot:50] - Components started successfully on port 4016
+16-12-06 15:24:55 UnknownHost INFO [components.core.boot:50] - Components started successfully on port 4016
+16-12-06 15:29:36 UnknownHost ERROR [components.ctrl.template:18] - template not found: nil
+16-12-06 15:29:36 UnknownHost ERROR [components.ctrl.template:18] - template not found: nil
+16-12-06 15:29:36 UnknownHost ERROR [components.ctrl.template:18] - template not found: nil
+16-12-06 15:29:36 UnknownHost ERROR [components.ctrl.template:18] - template not found: nil
+16-12-06 15:33:23 UnknownHost ERROR [components.ctrl.template:18] - template not found: nil
+16-12-06 15:33:23 UnknownHost ERROR [components.ctrl.template:18] - template not found: nil
+16-12-06 15:33:23 UnknownHost ERROR [components.ctrl.template:18] - template not found: nil
+16-12-06 15:33:23 UnknownHost ERROR [components.ctrl.template:18] - template not found: nil
+16-12-06 15:40:47 UnknownHost INFO [components.core.boot:50] - Components started successfully on port 4016
+16-12-06 17:00:54 HUMANOOABIsMBP2 INFO [components.core.boot:50] - Components started successfully on port 4016
+16-12-06 17:04:01 HUMANOOABIsMBP2 INFO [components.core.boot:50] - Components started successfully on port 4016
+16-12-06 19:21:58 HUMANOOABIsMBP2 INFO [components.core.boot:56] - Components started successfully on port 4016
+16-12-06 19:22:37 HUMANOOABIsMBP2 INFO [components.core.boot:56] - Components started successfully on port 4016
+16-12-07 07:19:33 UnknownHost INFO [components.core.boot:56] - Components started successfully on port 4016
+16-12-07 07:20:30 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-07 07:22:53 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-07 07:57:35 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-07 09:51:05 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-07 09:54:38 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-07 10:09:56 UnknownHost INFO [components.core.boot:63] - Components started successfully on port 4016
+16-12-07 10:32:27 UnknownHost INFO [components.core.boot:57] - Components started successfully on port 4016
+16-12-07 10:36:35 UnknownHost INFO [components.core.boot:57] - Components started successfully on port 4016
+16-12-07 10:40:35 UnknownHost INFO [components.core.boot:57] - Components started successfully on port 4016
+16-12-07 10:48:24 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 10:57:04 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 11:01:19 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 11:02:58 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 12:19:59 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 12:27:37 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 12:32:00 HUMANOO-GABIs-MacBook-Pro-2.local INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 12:39:12 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 12:46:03 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 12:47:13 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 12:58:52 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 13:04:57 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 13:17:09 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 13:22:13 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 13:23:31 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 13:35:40 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 13:36:52 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 13:39:15 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 13:41:44 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 13:42:25 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 13:44:32 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 13:45:57 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 13:47:27 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 13:53:26 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 13:59:17 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 14:05:12 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 14:12:41 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 14:15:18 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 14:26:19 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 14:31:21 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 14:32:37 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 14:36:13 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 14:38:37 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 14:41:45 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 14:44:01 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 14:46:51 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 14:48:11 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 14:49:21 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 14:53:25 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 15:06:35 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 15:10:33 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 15:11:21 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 15:15:29 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 15:22:31 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 15:26:50 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 16:52:32 HUMANOOABIsMBP2 INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 17:00:15 HUMANOOABIsMBP2 INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 17:20:07 HUMANOOABIsMBP2 INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 17:31:23 HUMANOOABIsMBP2 INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 17:37:29 HUMANOOABIsMBP2 INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 17:55:38 HUMANOOABIsMBP2 INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 17:58:00 HUMANOOABIsMBP2 INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-07 17:58:45 HUMANOOABIsMBP2 INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-08 07:08:20 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-08 07:20:16 UnknownHost INFO [components.core.boot:50] - Components started successfully on port 4016
+16-12-08 07:36:20 UnknownHost INFO [components.core.boot:50] - Components started successfully on port 4016
+16-12-08 14:32:22 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-11 16:04:40 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-12 07:05:19 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-12 12:25:14 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-12 18:52:03 HUMANOOABIsMBP2 INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-12 19:03:20 HUMANOOABIsMBP2 INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-12 19:03:45 HUMANOOABIsMBP2 ERROR [components.ctrl.template:18] - template not found: register
+16-12-13 07:32:04 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-13 08:52:03 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-13 10:42:21 UnknownHost ERROR [components.models.token:66] - Parameter Mismatch: :username parameter data not found.
+16-12-13 10:45:06 UnknownHost ERROR [components.models.token:66] - ERROR: null value in column "password" violates not-null constraint
+  Detail: Failing row contains (gabimunteanu.sdt@gmail.com, null, null, 0, null, f, gabimunteanu.sdt@gmail.com, f, null, f, t, 2016-12-13 11:45:06.073528, 0).
+16-12-13 12:41:45 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-13 12:46:29 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-13 12:50:38 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-13 13:00:56 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-13 13:45:34 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-13 17:14:40 HUMANOOABIsMBP2 INFO [components.core.boot:51] - Components started successfully on port 4016
+16-12-14 10:07:01 UnknownHost INFO [components.core.boot:51] - Components started successfully on port 4016
+16-12-14 10:52:16 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-14 11:00:27 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-14 11:07:21 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-14 11:21:52 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-14 11:23:51 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-14 12:10:02 UnknownHost ERROR [components.ctrl.smtp:16] - Wrong number of args (1) passed to: core/build-email
+16-12-14 12:10:00 UnknownHost ERROR [components.ctrl.smtp:16] - Wrong number of args (1) passed to: core/build-email
+16-12-14 12:49:41 UnknownHost ERROR [components.ctrl.smtp:22] - Wrong number of args (0) passed to: PersistentVector
+16-12-14 12:50:20 UnknownHost ERROR [components.ctrl.smtp:22] - Wrong number of args (0) passed to: PersistentVector
+16-12-14 12:50:23 UnknownHost ERROR [components.ctrl.smtp:22] - Wrong number of args (0) passed to: PersistentVector
+16-12-14 12:51:40 UnknownHost ERROR [components.ctrl.smtp:22] - Wrong number of args (0) passed to: PersistentVector
+16-12-14 12:52:04 UnknownHost ERROR [components.ctrl.smtp:22] - Wrong number of args (0) passed to: PersistentVector
+16-12-14 13:01:01 UnknownHost ERROR [components.ctrl.smtp:22] - No implementation of method: :eval-part of protocol: #'postal.message/PartEval found for class: java.lang.String
+16-12-14 13:23:00 UnknownHost ERROR [components.ctrl.smtp:22] - nil
+16-12-14 13:50:51 UnknownHost INFO [components.ctrl.chat:90] - :going-away 0.0.0.0/0.0.0.0:4016<->null
+16-12-14 13:56:47 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-14 14:16:07 UnknownHost INFO [components.ctrl.chat:90] - :going-away 0.0.0.0/0.0.0.0:4016<->null
+16-12-14 14:19:09 UnknownHost INFO [components.ctrl.chat:90] - :going-away 0.0.0.0/0.0.0.0:4016<->null
+16-12-14 14:20:22 UnknownHost INFO [components.ctrl.chat:90] - :going-away 0.0.0.0/0.0.0.0:4016<->null
+16-12-14 14:20:44 UnknownHost INFO [components.ctrl.chat:90] - :going-away 0.0.0.0/0.0.0.0:4016<->null
+16-12-14 14:21:14 UnknownHost INFO [components.ctrl.chat:90] - :going-away 0.0.0.0/0.0.0.0:4016<->null
+16-12-14 14:22:04 UnknownHost INFO [components.ctrl.chat:90] - :going-away 0.0.0.0/0.0.0.0:4016<->null
+16-12-14 14:33:47 UnknownHost INFO [components.ctrl.chat:90] - :going-away 0.0.0.0/0.0.0.0:4016<->null
+16-12-14 15:02:36 UnknownHost INFO [components.ctrl.chat:90] - :going-away 0.0.0.0/0.0.0.0:4016<->null
+16-12-15 07:27:23 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-15 07:46:26 HUMANOO-GABIs-MacBook-Pro-2.local INFO [components.ctrl.chat:90] - :going-away 0.0.0.0/0.0.0.0:4016<->null
+16-12-15 07:47:46 UnknownHost INFO [components.core.boot:52] - Components started successfully on port 4016
+16-12-15 07:49:16 UnknownHost INFO [components.ctrl.chat:90] - :going-away 0.0.0.0/0.0.0.0:4016<->null
+16-12-15 07:51:11 UnknownHost INFO [components.ctrl.chat:90] - :going-away 0.0.0.0/0.0.0.0:4016<->null
+16-12-15 07:54:16 UnknownHost INFO [components.core.boot:54] - Components started successfully on port 4016
+16-12-15 07:59:02 UnknownHost INFO [components.core.boot:54] - Components started successfully on port 4016
+16-12-15 08:34:22 UnknownHost INFO [components.ctrl.chat:90] - :going-away 0.0.0.0/0.0.0.0:4016<->null
+16-12-15 09:57:21 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-15 10:43:53 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-15 10:46:24 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-15 14:53:51 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-15 15:00:01 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-15 15:01:58 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
+16-12-25 15:40:31 UnknownHost INFO [components.core.boot:53] - Components started successfully on port 4016
