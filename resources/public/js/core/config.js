@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Cfg = (function () {
     function Cfg() {
         this.authUrl = "http://localhost:4016";

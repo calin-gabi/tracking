@@ -7,10 +7,10 @@
    [tracking.ctrl.middleware :as c-mid]
    [tracking.ctrl.template :refer [template-routes]]
    [tracking.ctrl.account :refer [account-routes]]
-   [tracking.ctrl.tracking :refer [tracking-routes]]
    [tracking.ctrl.token :refer [token-routes]]
-   [tracking.ctrl.reports :refer [reports-routes]]
    [tracking.ctrl.smtp :refer [smtp-routes]]
+   [tracking.ctrl.tracking :refer [tracking-routes]]
+   [tracking.ctrl.reports :refer [reports-routes]]
    [cuerdas.core :as str]
    [environ.core :refer [env]]
    [hugsql.core :as hugsql]
@@ -21,17 +21,14 @@
    [ring.middleware.reload :as reload])
   (:gen-class))
 
-(require 'tracking.tmpl.account.account)
-(require 'tracking.tmpl.home.home)
-
 (defroutes base-routes
   (route/resources "/")
   (route/not-found "<p>Page unfortunately not found.</p>"))
 
 (def app (reload/wrap-reload
-          (-> (routes index-routes tracking-routes template-routes smtp-routes account-routes token-routes reports-routes base-routes)
+          (-> (routes index-routes smtp-routes tracking-routes account-routes token-routes reports-routes base-routes)
               (c-mid/middleware))))
-              
+
 (defn init [args]
   (let [port (some-> args
                      (second)

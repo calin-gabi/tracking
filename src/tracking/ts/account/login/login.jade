@@ -1,0 +1,20 @@
+#maindiv-login.maindiv
+    .logo-bar
+    .header
+        span SIGN IN
+    .form-container
+        .login-form
+            form.login-form([formGroup]="form" "(ngSubmit)"="submit()")
+                .form-group.username
+                    input.form-control(type="text", formControlName="username", placeholder="Username", required='', autofocus)
+                .form-group.password
+                    input.form-control(type="password", formControlName="password", placeholder="Password", required='')
+                .text-alert(*ngIf="errMsg") {{errMsg}}
+                .form-group.forgot-password
+                    a([routerLink]="['/password']", routerLinkActive="active") Forgot your password?
+                .signin-button.form-group
+                    button.btn.btn-register.center-block([disabled]="!form.valid" type='submit') Sign in
+        .register
+            span Don't have an account?
+            a([routerLink]="['/register']"
+                routerLinkActive="active") Register Account

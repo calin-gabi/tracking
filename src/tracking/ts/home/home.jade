@@ -1,0 +1,59 @@
+#my-home
+    .header.container-fluid
+        .col-md-3
+            span Hi {{state.cred.userprofile.first_name}} {{state.cred.userprofile.last_name}}
+        .col-md-8
+        .col-md-1
+            a([routerLink]="['/logout']", routerLinkActive="active") Logout!
+    .main.container-fluid
+        .tracking.col-md-8
+            .filter-header.container-fluid
+                .col-lg-3 Filter by dates between
+                .col-lg-3 
+                    input("[(ngModel)]"="start_date" type="date")
+                .col-lg-1 and
+                .col-lg-3 
+                    input("[(ngModel)]"="end_date" type="date")
+                .col-lg-2
+                    button("(click)"="filterTracking($event)") Filter
+            .header-report.container
+                span.col-lg-2 Select week
+                input.week.col-lg-3("[ngModel]"="week" "(ngModelChange)"="weekChange($event)" "type"="week")
+                button.col-lg-2("(click)"="reportTracking()") Report
+                    i.fa.fa-print
+                a#downloadlink.col-lg-2(href="/tracking-report.pdf" target="_blank")
+                //- i.fa.fa-download   Download report
+            .header This is the tracking log for {{user}}
+            .header.inline
+                .left.date Date
+                .left.time Time (hours:mins)
+                .left.description Description
+                .left.amount Distance (km)
+                .left.comment Avg speed (km/h)
+                .btn.right("(click)"="addTrack()" title="click to add track")
+                    i.right.fa.fa-plus 
+                    span.right add track
+            .content
+                .track("*ngFor"="let track of tracking_filtered")
+                    .inline
+                        .left.date
+                            input("[(ngModel)]"="track.date" type="date" placeholder="MM/dd/yyyy")
+                        .left.time
+                            input("[(ngModel)]"="track.time" type="time" name="time" min="00:00" max="24:00" step="60")
+                        .left.description
+                            input("[(ngModel)]"="track.description" type="text" placeholder="description")
+                        .left.amount
+                            input("[(ngModel)]"="track.amount" type="number" min=0 placeholder="amount")
+                        .left.comment
+                            span {{avgSpeed(track.amount, track.time)}} km/h
+                        i.right.fa.fa-save("(click)"="saveTrack(track)" title="click to save changes")
+                        i.right.fa.fa-times("(click)"="delTrack(track)" title="click to delete track")
+        .users.col-md-4("*ngIf"="isManager()")
+            h5 Users (click button to see tracking)
+            .inline("*ngFor"="let user of users;")
+                button.btn.left.username("[disabled]"="noViewer(user)" "(click)"="selectUser(user.username)") {{user.username}}
+                .left.role("*ngIf"="isManager()")
+                    select("[ngModel]"="user.role" "(ngModelChange)"="roleChange(user, $event)" "[disabled]"="(user.role === 'admin' && state.cred.role !== 'admin')")
+                        option("*ngFor"="let role of roles;" "[value]"="role") {{role}}
+                button.btn.left("(click)"="deleteUser(user)" title="delete user" "[disabled]"="(user.role === 'admin' && state.cred.role !== 'admin')")
+                  i.left.del-user.fa.fa-times

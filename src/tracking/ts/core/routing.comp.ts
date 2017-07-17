@@ -1,10 +1,10 @@
 import {Routes, RouterModule} from "@angular/router";
 import {HomeComp} from "../home/home.comp";
-import {LoginComp} from "../account/login.comp";
-import {LogoutComp} from "../account/logout.comp";
-import {RegisterComp} from "../account/register.comp";
-import {RegisterConfirmationComp} from "../account/registerconfirmation.comp";
-import {EmailConfirmationComp} from "../account/emailconfirmation.comp";
+import {LoginComp} from "../account/login/login.comp";
+import {LogoutComp} from "../account/logout/logout.comp";
+import {RegisterComp} from "../account/register/register.comp";
+import {RegisterConfirmationComp} from "../account/registerConfirmation/registerconfirmation.comp";
+import {EmailConfirmationComp} from "../account/emailConfirmation/emailconfirmation.comp";
 import {AuthServ} from "./auth.serv";
 
 const appRoutes: Routes = [

@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var SmtpServ = (function () {
@@ -21,11 +22,11 @@ var SmtpServ = (function () {
         var opts = { headers: headers };
         return this.http.post(url, body, opts);
     };
-    SmtpServ = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], SmtpServ);
     return SmtpServ;
 }());
+SmtpServ = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], SmtpServ);
 exports.SmtpServ = SmtpServ;
 //# sourceMappingURL=smtp.serv.js.map

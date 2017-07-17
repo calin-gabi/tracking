@@ -1,21 +1,18 @@
-import * as _ from "lodash";
+// import * as _ from "lodash";
+import * as moment from "moment";
 import {OnDestroy, Inject, Injectable} from "@angular/core";
 import {Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot} from "@angular/router";
 import {Http, Response, Headers} from "@angular/http";
-import {Cfg} from "./config";
 import {StateServ, Cred} from "./state.serv";
-import {LocalStorageComp} from "./storage.comp";
 
 @Injectable()
 export class AuthServ implements CanActivate {
 
-    public users = [];
+    public users: any[];
 
     constructor(private http: Http,
-                private router: Router,
-                private cfg: Cfg,
-                private stateServ: StateServ,
-                private ls: LocalStorageComp) {
+        private router: Router,
+        private stateServ: StateServ) {
     }
 
     navUpdate(url: string): void {
@@ -30,14 +27,15 @@ export class AuthServ implements CanActivate {
     }
 
     sessionRenew() {
-        _.merge(this.stateServ.cred, {timestamp: Date.now()});
+        // _.merge(this.stateServ.cred, { timestamp: Date.now() });
+        this.stateServ.cred = Object.assign(this.stateServ.cred, { timestamp: Date.now() });
     }
 
     sessionClear() {
         this.stateServ.cred = {};
     }
 
-    isNoAuthNeeded(url) {
+    isNoAuthNeeded(url: string) {
         if (url === "/login") {
             return true;
         }
@@ -109,8 +107,6 @@ export class AuthServ implements CanActivate {
 
         // console.log("can activate: ");
         // console.log(state.url);
-
-        // console.log(this.isAuth(this.isRuling(state.url)));
 
         if (this.isNoAuthNeeded(state.url)) {
             return true;

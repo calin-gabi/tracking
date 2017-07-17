@@ -1,4 +1,4 @@
-import * as _ from "lodash";
+// import * as _ from "lodash";
 import {ReplaySubject} from "rxjs/ReplaySubject";
 import {Component, Injectable, OnInit, EventEmitter, Output, Inject} from "@angular/core";
 import {Response} from "@angular/http";
@@ -18,6 +18,9 @@ export interface Cred {
 export class StateServ implements OnInit {
 
     // #### VARS
+
+    public oauthProviderName = "";
+
     public lang: string = "en";
     public userProfile = {};
 
@@ -27,7 +30,7 @@ export class StateServ implements OnInit {
 
     public onCred: ReplaySubject<any> = new ReplaySubject();
 
-    public _nav = {prev: "", next: ""};
+    public _nav = { prev: "", next: "" };
 
     // #### CONSTRUCTOR
     constructor(private ls: LocalStorageComp) {
@@ -38,14 +41,15 @@ export class StateServ implements OnInit {
         const storedCred: Cred = this.ls.getObject("cred");
 
         if (storedCred) {
-            _.merge(this._cred, storedCred);
+            // _.merge(this._cred, storedCred);
+            this._cred = Object.assign(this._cred, storedCred);
         }
 
         return this._cred;
     }
 
     set cred(cred: Cred) {
-        let saveableCred = _.cloneDeep(cred);
+        let saveableCred = Object.assign({}, cred);//_.cloneDeep(cred);
 
         delete saveableCred.password;
 
@@ -54,10 +58,10 @@ export class StateServ implements OnInit {
         this.ls.setObject("cred", saveableCred);
 
         if (this._cred.token) {
-            this.onCred.next({method: "token-valid", stat: "ok"});
+            this.onCred.next({ method: "token-valid", stat: "ok" });
         }
         else {
-            this.onCred.next({method: "token-unset", stat: "ok"});
+            this.onCred.next({ method: "token-unset", stat: "ok" });
         }
     }
 
@@ -70,10 +74,10 @@ export class StateServ implements OnInit {
         this.cred.token = token;
 
         if (token) {
-            this.onCred.next({method: "token-set", stat: "ok"});
+            this.onCred.next({ method: "token-set", stat: "ok" });
         }
         else {
-            this.onCred.next({method: "token-set", stat: "err"});
+            this.onCred.next({ method: "token-set", stat: "err" });
         }
     }
 
@@ -87,7 +91,7 @@ export class StateServ implements OnInit {
     }
 
     // #### MSG
-    msg(obj) {
+    msg(obj: any) {
         console.log(">>>>>");
         console.log(obj);
         console.log("<<<<<");

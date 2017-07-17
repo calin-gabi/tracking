@@ -1,0 +1,37 @@
+
+<div id="maindiv-register" class="maindiv">
+  <div class="logo-bar"></div>
+  <div class="header"><span>SIGN UP</span></div>
+  <div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="submit()" class="register-form">
+      <div class="form-group">
+        <input autofocus="" formControlName="first_name" placeholder="First name" required="" class="first_name form-control"/>
+      </div>
+      <div class="form-group">
+        <input formControlName="last_name" placeholder="Last name" required="" class="last_name form-control"/>
+      </div>
+      <div class="form-group">
+        <input formControlName="username" placeholder="Username" required="" type="text" class="username form-control"/>
+      </div>
+      <div *ngIf="!username.valid" class="row">
+        <div *ngIf="username.hasError('usedUsername')" class="col-sm-12 text-danger">Username allready exists!</div>
+        <div *ngIf="username.hasError('notEmail')" class="col-sm-12 text-danger">Incorrect email!</div>
+      </div>
+      <fieldset formGroupName="passwords">
+        <div class="form-group">
+          <input id="password" formControlName="password" placeholder="Password" required="" type="password" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <input formControlName="password_rep" placeholder="Confirm password" required="" type="password" class="form-control"/>
+        </div>
+        <div class="row">
+          <div *ngIf="!form.controls['passwords'].valid &amp;&amp; !form.controls['passwords'].pristine" class="col-sm-12 text-danger">The passwords must be at least 6 characters long and they must match!</div>
+        </div>
+      </fieldset>
+      <div class="form-group"><span>I've read and I accept the Terms & conditions</span>
+        <input formControlName="iagree" type="checkbox" required=""/>
+      </div>
+      <button [disabled]="!form.valid" type="submit" class="btn btn-register center-block">Register</button>
+    </form>
+  </div>
+</div>

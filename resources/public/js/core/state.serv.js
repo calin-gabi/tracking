@@ -8,13 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var _ = require("lodash");
+// import * as _ from "lodash";
 var ReplaySubject_1 = require("rxjs/ReplaySubject");
 var core_1 = require("@angular/core");
 var storage_comp_1 = require("../core/storage.comp");
 var StateServ = (function () {
+    // #### CONSTRUCTOR
     function StateServ(ls) {
         this.ls = ls;
+        // #### VARS
+        this.oauthProviderName = "";
         this.lang = "en";
         this.userProfile = {};
         this.chan = new core_1.EventEmitter();
@@ -23,15 +26,17 @@ var StateServ = (function () {
         this._nav = { prev: "", next: "" };
     }
     Object.defineProperty(StateServ.prototype, "cred", {
+        // #### CRED
         get: function () {
             var storedCred = this.ls.getObject("cred");
             if (storedCred) {
-                _.merge(this._cred, storedCred);
+                // _.merge(this._cred, storedCred);
+                this._cred = Object.assign(this._cred, storedCred);
             }
             return this._cred;
         },
         set: function (cred) {
-            var saveableCred = _.cloneDeep(cred);
+            var saveableCred = Object.assign({}, cred); //_.cloneDeep(cred);
             delete saveableCred.password;
             this._cred = cred;
             this.ls.setObject("cred", saveableCred);
@@ -46,6 +51,7 @@ var StateServ = (function () {
         configurable: true
     });
     Object.defineProperty(StateServ.prototype, "token", {
+        // #### TOKEN
         get: function () {
             return this.cred.token;
         },
@@ -62,6 +68,7 @@ var StateServ = (function () {
         configurable: true
     });
     Object.defineProperty(StateServ.prototype, "nav", {
+        // #### NAV
         get: function () {
             return this._nav;
         },
@@ -71,6 +78,7 @@ var StateServ = (function () {
         enumerable: true,
         configurable: true
     });
+    // #### MSG
     StateServ.prototype.msg = function (obj) {
         console.log(">>>>>");
         console.log(obj);

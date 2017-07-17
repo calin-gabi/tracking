@@ -1,36 +1,34 @@
 import {Injectable} from "@angular/core";
 import {Http, Headers, Request, RequestOptions, RequestMethod, Response} from "@angular/http";
-import {Cfg} from "../core/config";
 import {StateServ} from "../core/state.serv";
 
 @Injectable()
 export class HomeServ {
 
     constructor(private http: Http,
-                private cfg: Cfg,
                 private stateServ: StateServ) {
     }
 
-    usersGet(obj) {
+    usersGet(obj: any) {
         let url = "/users";
         let body = JSON.stringify(obj);
         const token = this.stateServ.cred.token;
         let headers = new Headers({"Content-Type": "application/json", "Authorization": "Token " +  token});
         let opts = {headers: headers};
-        return this.http.post(url, body, opts);
+        return this.http.get(url, opts);
     }
 
-    userDelete(obj) {
-        let url = "/users/delete";
+    userDelete(obj: any) {
+        let url = "/users/delete?username=" + obj.username;
         let body = JSON.stringify(obj);
         const token = this.stateServ.cred.token;
         let headers = new Headers({"Content-Type": "application/json",
                                    "Authorization": "Token " +  token});
         let opts = {headers: headers};
-        return this.http.post(url, body, opts);
+        return this.http.delete(url, opts);
     }
 
-    userRole(obj) {
+    userRole(obj: any) {
         let url = "/users/role";
         let body = JSON.stringify(obj);
         const token = this.stateServ.cred.token;
@@ -40,17 +38,17 @@ export class HomeServ {
         return this.http.post(url, body, opts);
     }
 
-    selectUser(user) {
-        let url = "/tracking";
+    selectUser(user: any) {
+        let url = "/tracking?username=" + user.username;
         let body = JSON.stringify(user);
         const token = this.stateServ.cred.token;
         let headers = new Headers({"Content-Type": "application/json",
                                    "Authorization": "Token " +  token});
         let opts = {headers: headers};
-        return this.http.post(url, body, opts);
+        return this.http.get(url, opts);
     }
 
-    saveExpense(obj) {
+    saveTrack(obj: any) {
         let url = "/tracking/save";
         let body = JSON.stringify(obj);
         const token = this.stateServ.cred.token;
@@ -60,17 +58,17 @@ export class HomeServ {
         return this.http.post(url, body, opts);
     }
 
-    delExpense(obj) {
-        let url = "/tracking/del";
+    delTrack(obj: any) {
+        let url = "/tracking/del?id=" + obj.track.id;
         let body = JSON.stringify(obj);
         const token = this.stateServ.cred.token;
         let headers = new Headers({"Content-Type": "application/json",
                                    "Authorization": "Token " +  token});
         let opts = {headers: headers};
-        return this.http.post(url, body, opts);
+        return this.http.delete(url, opts);
     }
 
-    reporttracking(obj) {
+    reportTracking(obj: any) {
         let url = "/reports/tracking";
         let body = JSON.stringify(obj);
         const token = this.stateServ.cred.token;

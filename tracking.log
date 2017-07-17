@@ -1,0 +1,57 @@
+17-02-25 07:48:18 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:48] - tracking started successfully on port 3016
+17-02-25 10:53:56 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:48] - tracking started successfully on port 3016
+17-02-25 11:46:18 Gabriels-MBP.SpeedportEntry2090126200030 ERROR [tracking.ctrl.account:65] - Wrong number of args (4) passed to: core/select-keys
+17-02-25 11:47:10 Gabriels-MBP.SpeedportEntry2090126200030 ERROR [tracking.ctrl.account:65] - Wrong number of args (4) passed to: core/select-keys
+17-02-25 11:54:24 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:48] - tracking started successfully on port 3016
+17-02-25 13:13:27 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:48] - tracking started successfully on port 3016
+17-02-25 13:17:05 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:48] - tracking started successfully on port 3016
+17-02-25 13:22:40 UnknownHost INFO [tracking.core.boot:49] - tracking started successfully on port 3016
+17-02-25 16:09:28 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:49] - tracking started successfully on port 3016
+17-02-25 16:17:52 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:49] - tracking started successfully on port 3016
+17-02-25 16:21:30 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:49] - tracking started successfully on port 3016
+17-02-25 16:26:23 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:49] - tracking started successfully on port 3016
+17-02-25 16:33:59 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-02-25 16:47:06 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-02-25 17:17:17 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-02-25 17:20:42 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-02-25 17:38:18 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-02-25 17:44:52 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-02-25 18:10:48 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-02-26 10:56:34 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-02-26 12:16:39 Gabriels-MBP.SpeedportEntry2090126200030 ERROR [tracking.models.account:52] - Parameter Mismatch: :picture_url parameter data not found.
+17-02-26 12:23:01 Gabriels-MBP.SpeedportEntry2090126200030 ERROR [tracking.models.account:52] - ERROR: duplicate key value violates unique constraint "users_pkey"
+  Detail: Key (username)=(test) already exists.
+17-02-26 12:36:30 Gabriels-MBP.SpeedportEntry2090126200030 ERROR [tracking.models.account:52] - ERROR: duplicate key value violates unique constraint "users_pkey"
+  Detail: Key (username)=(test) already exists.
+17-02-26 12:37:00 Gabriels-MBP.SpeedportEntry2090126200030 ERROR [tracking.models.account:52] - ERROR: duplicate key value violates unique constraint "users_pkey"
+  Detail: Key (username)=(test) already exists.
+17-02-26 12:37:52 Gabriels-MBP.SpeedportEntry2090126200030 ERROR [tracking.models.account:52] - ERROR: duplicate key value violates unique constraint "users_pkey"
+  Detail: Key (username)=(test) already exists.
+17-02-26 12:38:32 Gabriels-MBP.SpeedportEntry2090126200030 ERROR [tracking.models.account:52] - ERROR: duplicate key value violates unique constraint "users_pkey"
+  Detail: Key (username)=(test) already exists.
+17-02-26 13:05:53 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-02-26 14:28:01 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-02-26 14:34:49 Gabriels-MBP.SpeedportEntry2090126200030 ERROR [tracking.models.account:51] - ERROR: duplicate key value violates unique constraint "users_pkey"
+  Detail: Key (username)=(test-user) already exists.
+17-02-26 14:35:04 Gabriels-MBP.SpeedportEntry2090126200030 ERROR [tracking.models.account:51] - ERROR: duplicate key value violates unique constraint "users_pkey"
+  Detail: Key (username)=(test-user) already exists.
+17-02-26 16:16:13 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-02-28 17:02:08 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-01 18:32:06 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-01 18:42:13 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-02 18:01:46 38:C9:86:46:6A:C1.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-03 06:46:45 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-04 06:08:21 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-04 07:04:31 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-04 07:16:31 38:C9:86:46:6A:C1.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-04 07:29:15 38:C9:86:46:6A:C1.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-04 13:27:21 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-05 16:47:02 38:C9:86:46:6A:C1.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-05 17:13:43 38:C9:86:46:6A:C1.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-05 17:15:28 38:C9:86:46:6A:C1.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-05 17:25:24 38:C9:86:46:6A:C1.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-05 17:31:57 38:C9:86:46:6A:C1.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-05 17:42:28 38:C9:86:46:6A:C1.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-03-07 17:06:58 38:C9:86:46:6A:C1.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-07-17 16:13:31 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016
+17-07-17 16:31:30 Gabriels-MBP.SpeedportEntry2090126200030 INFO [tracking.core.boot:50] - tracking started successfully on port 3016

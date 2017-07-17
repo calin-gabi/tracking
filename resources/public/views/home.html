@@ -1,0 +1,69 @@
+
+<div id="my-home">
+  <div class="header container-fluid">
+    <div class="col-md-3"><span>Hi {{state.cred.userprofile.first_name}} {{state.cred.userprofile.last_name}}</span></div>
+    <div class="col-md-8"></div>
+    <div class="col-md-1"><a [routerLink]="['/logout']" routerLinkActive="active">Logout!</a></div>
+  </div>
+  <div class="main container-fluid">
+    <div class="tracking col-md-8">
+      <div class="filter-header container-fluid">
+        <div class="col-lg-3">Filter by dates between</div>
+        <div class="col-lg-3"> 
+          <input [(ngModel)]="start_date" type="date"/>
+        </div>
+        <div class="col-lg-1">and</div>
+        <div class="col-lg-3"> 
+          <input [(ngModel)]="end_date" type="date"/>
+        </div>
+        <div class="col-lg-2">
+          <button (click)="filterTracking($event)">Filter</button>
+        </div>
+      </div>
+      <div class="header-report container"><span class="col-lg-2">Select week</span>
+        <input [ngModel]="week" (ngModelChange)="weekChange($event)" type="week" class="week col-lg-3"/>
+        <button (click)="reportTracking()" class="col-lg-2">Report<i class="fa fa-print"></i></button><a id="downloadlink" href="/tracking-report.pdf" target="_blank" class="col-lg-2"></a>
+      </div>
+      <div class="header">This is the tracking log for {{user}}</div>
+      <div class="header inline">
+        <div class="left date">Date</div>
+        <div class="left time">Time (hours:mins)</div>
+        <div class="left description">Description</div>
+        <div class="left amount">Distance (km)</div>
+        <div class="left comment">Avg speed (km/h)</div>
+        <div (click)="addTrack()" title="click to add track" class="btn right"><i class="right fa fa-plus"> </i><span class="right">add track</span></div>
+      </div>
+      <div class="content">
+        <div *ngFor="let track of tracking_filtered" class="track">
+          <div class="inline">
+            <div class="left date">
+              <input [(ngModel)]="track.date" type="date" placeholder="MM/dd/yyyy"/>
+            </div>
+            <div class="left time">
+              <input [(ngModel)]="track.time" type="time" name="time" min="00:00" max="24:00" step="60"/>
+            </div>
+            <div class="left description">
+              <input [(ngModel)]="track.description" type="text" placeholder="description"/>
+            </div>
+            <div class="left amount">
+              <input [(ngModel)]="track.amount" type="number" min="0" placeholder="amount"/>
+            </div>
+            <div class="left comment"><span>{{avgSpeed(track.amount, track.time)}} km/h</span></div><i (click)="saveTrack(track)" title="click to save changes" class="right fa fa-save"></i><i (click)="delTrack(track)" title="click to delete track" class="right fa fa-times"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="isManager()" class="users col-md-4">
+      <h5>Users (click button to see tracking)</h5>
+      <div *ngFor="let user of users;" class="inline">
+        <button [disabled]="noViewer(user)" (click)="selectUser(user.username)" class="btn left username">{{user.username}}</button>
+        <div *ngIf="isManager()" class="left role">
+          <select [ngModel]="user.role" (ngModelChange)="roleChange(user, $event)" [disabled]="(user.role === 'admin' &amp;&amp; state.cred.role !== 'admin')">
+            <option *ngFor="let role of roles;" [value]="role">{{role}}</option>
+          </select>
+        </div>
+        <button (click)="deleteUser(user)" title="delete user" [disabled]="(user.role === 'admin' &amp;&amp; state.cred.role !== 'admin')" class="btn left"><i class="left del-user fa fa-times"></i></button>
+      </div>
+    </div>
+  </div>
+</div>

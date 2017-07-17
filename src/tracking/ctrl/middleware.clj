@@ -45,6 +45,7 @@
    (or res false)))
 
 (defn basic-auth [req authdata]
+  (dbg authdata)
   (let [db-user (by-username-user-read cfg/db authdata)
         res (if (hashers/check (:password authdata) (:password db-user))
               {:username (:username db-user) :role (:role db-user)}
@@ -57,12 +58,12 @@
 
 ;; ## Authorization
 (defn users? [{:keys [identity] :as req}]
-  (if (dbg (.contains [ "admin" "manager"] (:role identity)))
+  (if (.contains [ "admin" "manager"] (:role identity))
     (rules/success)
     (rules/error "Not authorized")))
 
 (defn tracking? [{:keys [identity] :as req}]
-  (if (.contains [ "admin" ] (:role identity))
+  (if (.contains [ "admin" "manager" "user" ] (:role identity))
     (rules/success)
     (rules/error "Not authorized")))
 
@@ -70,7 +71,7 @@
   [{:uri "/users*"
     :handler users?}
 
-    #_{:uri "/tracking/*"
+    {:uri "/tracking/*"
     :handler tracking?}])
 
 (defn on-error [req value]

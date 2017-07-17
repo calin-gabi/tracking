@@ -10,12 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-var config_1 = require("../core/config");
 var state_serv_1 = require("../core/state.serv");
 var HomeServ = (function () {
-    function HomeServ(http, cfg, stateServ) {
+    function HomeServ(http, stateServ) {
         this.http = http;
-        this.cfg = cfg;
         this.stateServ = stateServ;
     }
     HomeServ.prototype.usersGet = function (obj) {
@@ -24,16 +22,16 @@ var HomeServ = (function () {
         var token = this.stateServ.cred.token;
         var headers = new http_1.Headers({ "Content-Type": "application/json", "Authorization": "Token " + token });
         var opts = { headers: headers };
-        return this.http.post(url, body, opts);
+        return this.http.get(url, opts);
     };
     HomeServ.prototype.userDelete = function (obj) {
-        var url = "/users/delete";
+        var url = "/users/delete?username=" + obj.username;
         var body = JSON.stringify(obj);
         var token = this.stateServ.cred.token;
         var headers = new http_1.Headers({ "Content-Type": "application/json",
             "Authorization": "Token " + token });
         var opts = { headers: headers };
-        return this.http.post(url, body, opts);
+        return this.http.delete(url, opts);
     };
     HomeServ.prototype.userRole = function (obj) {
         var url = "/users/role";
@@ -45,15 +43,15 @@ var HomeServ = (function () {
         return this.http.post(url, body, opts);
     };
     HomeServ.prototype.selectUser = function (user) {
-        var url = "/tracking";
+        var url = "/tracking?username=" + user.username;
         var body = JSON.stringify(user);
         var token = this.stateServ.cred.token;
         var headers = new http_1.Headers({ "Content-Type": "application/json",
             "Authorization": "Token " + token });
         var opts = { headers: headers };
-        return this.http.post(url, body, opts);
+        return this.http.get(url, opts);
     };
-    HomeServ.prototype.saveExpense = function (obj) {
+    HomeServ.prototype.saveTrack = function (obj) {
         var url = "/tracking/save";
         var body = JSON.stringify(obj);
         var token = this.stateServ.cred.token;
@@ -62,16 +60,16 @@ var HomeServ = (function () {
         var opts = { headers: headers };
         return this.http.post(url, body, opts);
     };
-    HomeServ.prototype.delExpense = function (obj) {
-        var url = "/tracking/del";
+    HomeServ.prototype.delTrack = function (obj) {
+        var url = "/tracking/del?id=" + obj.track.id;
         var body = JSON.stringify(obj);
         var token = this.stateServ.cred.token;
         var headers = new http_1.Headers({ "Content-Type": "application/json",
             "Authorization": "Token " + token });
         var opts = { headers: headers };
-        return this.http.post(url, body, opts);
+        return this.http.delete(url, opts);
     };
-    HomeServ.prototype.reporttracking = function (obj) {
+    HomeServ.prototype.reportTracking = function (obj) {
         var url = "/reports/tracking";
         var body = JSON.stringify(obj);
         var token = this.stateServ.cred.token;
@@ -82,7 +80,7 @@ var HomeServ = (function () {
     };
     HomeServ = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, config_1.Cfg, state_serv_1.StateServ])
+        __metadata('design:paramtypes', [http_1.Http, state_serv_1.StateServ])
     ], HomeServ);
     return HomeServ;
 }());

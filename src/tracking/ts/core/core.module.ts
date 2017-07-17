@@ -1,10 +1,8 @@
 import {BrowserModule} from "@angular/platform-browser";
 import {NgModule}  from "@angular/core";
-import {LocalStorageComp} from "./storage.comp";
-import {Cfg} from "./config";
 import {AuthServ} from "./auth.serv";
 import {StateServ} from "./state.serv";
-import {SmtpServ} from "./smtp.serv";
+import {LocalStorageComp} from "./storage.comp"
 
 @NgModule({
     imports: [BrowserModule],
@@ -13,7 +11,7 @@ import {SmtpServ} from "./smtp.serv";
 
     declarations: [],
 
-    providers: [LocalStorageComp, AuthServ, StateServ, SmtpServ],
+    providers: [AuthServ, StateServ, LocalStorageComp],
 
     bootstrap: []
 })

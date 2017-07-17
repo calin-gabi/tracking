@@ -10,10 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
-var storage_comp_1 = require("./storage.comp");
 var auth_serv_1 = require("./auth.serv");
 var state_serv_1 = require("./state.serv");
-var smtp_serv_1 = require("./smtp.serv");
+var storage_comp_1 = require("./storage.comp");
 var CoreModule = (function () {
     function CoreModule() {
     }
@@ -22,7 +21,7 @@ var CoreModule = (function () {
             imports: [platform_browser_1.BrowserModule],
             exports: [],
             declarations: [],
-            providers: [storage_comp_1.LocalStorageComp, auth_serv_1.AuthServ, state_serv_1.StateServ, smtp_serv_1.SmtpServ],
+            providers: [auth_serv_1.AuthServ, state_serv_1.StateServ, storage_comp_1.LocalStorageComp],
             bootstrap: []
         }), 
         __metadata('design:paramtypes', [])

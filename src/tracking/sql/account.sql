@@ -100,8 +100,8 @@ WHERE role = :role;
 
 -- :name user-role-create! :<! :1
 INSERT INTO usersinroles
-(username, role) 
-VALUES (:username, :role) 
+(username, role)
+VALUES (:username, :role)
 ON CONFLICT DO NOTHING
 RETURNING *;
 
@@ -119,27 +119,31 @@ SELECT *
 FROM usersinroles
 WHERE username = :username;
 
+-- :name by-user-oauth-read :? :n
+SELECT * FROM users_oauth
+WHERE username = :username AND oauth_id =:sub AND oauth_type = :iss;
+
 -- :name by-user-oauth-create! :<! :1
 INSERT INTO users
 (username, email)
-VALUES 
+VALUES
 (:username, :username)
 RETURNING *;
 
 -- :name by-user-useroauth-create! :<! :1
 INSERT INTO users_oauth
 (username, oauth_id, oauth_type)
-VALUES 
+VALUES
 (:username, :sub, :iss)
 RETURNING *;
 
 -- :name by-user-userprofile-read :? :1
-SELECT username, first_name, last_name FROM users_profile
+SELECT id, username, first_name, last_name, picture_url FROM users_profile
 WHERE username = :username;
 
 -- :name by-user-userprofile-create! :<! :1
 INSERT INTO users_profile
-(username, first_name, last_name)
-VALUES 
-(:username, :first_name, :last_name)
+(username, first_name, last_name, picture_url)
+VALUES
+(:username, :first_name, :last_name, :picture_url)
 RETURNING *;

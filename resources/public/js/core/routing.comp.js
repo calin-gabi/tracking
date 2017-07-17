@@ -1,11 +1,11 @@
 "use strict";
 var router_1 = require("@angular/router");
 var home_comp_1 = require("../home/home.comp");
-var login_comp_1 = require("../account/login.comp");
-var logout_comp_1 = require("../account/logout.comp");
-var register_comp_1 = require("../account/register.comp");
-var registerconfirmation_comp_1 = require("../account/registerconfirmation.comp");
-var emailconfirmation_comp_1 = require("../account/emailconfirmation.comp");
+var login_comp_1 = require("../account/login/login.comp");
+var logout_comp_1 = require("../account/logout/logout.comp");
+var register_comp_1 = require("../account/register/register.comp");
+var registerconfirmation_comp_1 = require("../account/registerConfirmation/registerconfirmation.comp");
+var emailconfirmation_comp_1 = require("../account/emailConfirmation/emailconfirmation.comp");
 var auth_serv_1 = require("./auth.serv");
 var appRoutes = [
     {

@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "vars.css",
+	"sources": [
+		"../../../src/tracking/scss/vars.scss"
+	],
+	"names": [],
+	"mappings": "AAMA,OAAO,CAAC,oDAAI,CACZ,OAAO,CAAC,iDAAI"
+}

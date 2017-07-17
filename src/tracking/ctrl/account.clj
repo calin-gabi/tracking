@@ -8,8 +8,9 @@
    [clojure.java.jdbc :as jdbc]
    [clojure.java.io :as cio]
    [clojure.spec :as sp]
+   [clojure.walk :as walk]
    [cuerdas.core :as str]
-   [compojure.core :refer [context defroutes GET POST]]
+   [compojure.core :refer [context defroutes GET POST DELETE]]
    [tracking.core.config :as cfg]
    [tracking.models.account :as db-account]
    [tracking.models.token :as db-token]
@@ -25,102 +26,98 @@
 (defn user-exists? [{:keys [params] :as req}]
   (json/generate-string
    (let [username (str/lower (:username params))]
-    (if (> (count username) 0)
-      (if (:case (user-found? cfg/db {:username username}))
-        {:stat :ok :res username :msg "User exists"}
-        {:stat :ok :res nil :msg "User not found"})
-      {:stat :err :msg "Username not valid"}))))
+     (if (> (count username) 0)
+       (if (:case (user-found? cfg/db {:username username}))
+         {:stat :ok :res username :msg "User exists"}
+         {:stat :ok :res nil :msg "User not found"})
+       {:stat :err :msg "Username not valid"}))))
 
 (sp/def ::min-reg-profile (sp/keys :req-un [::passwords ::username]))
 
-(defn register! [{:keys [params] :as req}]
-  (json/generate-string 
-    (if (sp/valid? ::min-reg-profile params)
-      (jdbc/with-db-transaction [tx cfg/db]
-        (try
-          (let [password (:password (:passwords params))
-                passwordhash (-> password
-                                  (hashers/derive {:iterations 10 :limit cfg/trusted-algs}))
-                users (count (users-read tx))
-                role (if (> users 0)
-                        "user"
-                        "admin")
-                user {:username (:username params) :password passwordhash :role role}
-                user_ (user-create! tx user)
-                role_ (user-role-insert! tx {:username (:username user_) :role role})
-                res :ok]
-              {:stat res})
-          (catch Exception ex
-            (jdbc/db-set-rollback-only! tx)
-            (log/error (.getMessage ex))
-            {:stat :err :msg "DB error"})))
-      {:stat :err :msg "user create error"})))
-
 (sp/def ::min-login (sp/keys :req-un [::password ::username]))
 
-(defn login [{:keys [params] :as req}]
+(defn login [{:keys [identity] :as req}]
+  (dbg req)
   (json/generate-string
-    (if (sp/valid? ::min-login params)
-      (jdbc/with-db-transaction [tx cfg/db]
-        (try
-          (let [username (str/lower (:username params))
-                password (:password params)
-                db-user (by-username-user-read tx {:username username})]
+   (jdbc/with-db-transaction [tx cfg/db]
+                             (try
+                               (let [username (str/lower (:username (dbg identity)))
+                                     db-user (dbg (by-username-user-read tx {:username username}))]
 
-            (if db-user
-              ;; ## User found
-              (if (hashers/check password (:password db-user))
-                ;; # Correct creds
-                (do
-                  (login-update! tx {:username username})
-                  {:stat :ok :res {:user (select-keys db-user [:username :role])
-                                    :token (:res (db-token/token-create! username (:role db-user)))}})
-                ;; # Wrong creds
-                (do
-                  (attempts-update! tx {:username username})
-                  {:stat :err :msg "Wrong credentials"}))
-              ;; ## User not found
-              {:stat :err :msg "User not found"}))
+                                 (if db-user
+             ;; ## User found
+                                   (do
+                                     (login-update! tx {:username username})
+                                     (let [userprofile (dbg (by-user-userprofile-read tx  {:username username}))]
+                                       {:stat :ok :res {:user (select-keys db-user [:username :role]) :userprofile userprofile
+                                                        :token (:res (db-token/token-create! username (:role db-user)))}}))
+             ;; ## User not found
+                                   {:stat :err :msg "User not found"}))
 
-          (catch Exception ex
-            (jdbc/db-set-rollback-only! tx)
-            (log/error (.getMessage ex))
-            {:stat :err :msg "DB error"})))
+                               (catch Exception ex
+                                 (jdbc/db-set-rollback-only! tx)
+                                 (log/error (.getMessage ex))
+                                 {:stat :err :msg "DB error"})))))
 
-      {:stat :err :msg "Insufficient data"})))  
+(defn register! [{:keys [params identity headers] :as req}]
+  (dbg req)
+  (json/generate-string
+   (let [origin (dbg (:origin (walk/keywordize-keys headers)))
+         host_ (dbg (:host (walk/keywordize-keys headers)))
+         host (dbg (if (= (:scheme req) :http)
+                     (str "http://" host_)
+                     (str "https://" host_)))
+         res (if (or (= origin host) (.contains ["admin" "manager" "user"] (:role identity)))
+               (let [inserted (db-account/user-insert! params)
+                     result (if (= origin host)
+                              (json/parse-string (login {:identity {:username (:username params) :password (:password (:passwords params))}}))
+                              inserted)]
+                 result)
+               {:stat :err :msg "Not authorized"})]
+     res)))
 
 (defn logout! [{:keys [params] :as req}]
   (json/generate-string
    (let [res (db-token/token-remove! (:token params))]
-     {:stat :ok}))) 
+     {:stat :ok})))
+
+(defn oauth-submit [{:keys [params] :as req}]
+  (json/generate-string
+   (let [res (db-account/oauth-submit params)]
+     {:stat :ok :res res})))
 
 (defn users-get [{:keys [params] :as req}]
   (json/generate-string
    (let [username (:username params)
-          user (by-username-user-read cfg/db {:username username})
-          res (users-data-read cfg/db)]
+         user (by-username-user-read cfg/db {:username username})
+         res (users-data-read cfg/db)]
      {:stat :ok :res res})))
 
 (defn user-del! [{:keys [params] :as req}]
   (json/generate-string
    (let [username (:username params)
-          res (user-delete! cfg/db {:username username})]
-     {:stat :ok})))
+         user (by-username-user-read cfg/db {:username username})
+         res (if (and (= (:role user) "admin") (not (= (:role identity) "admin")))
+               "Not authorized"
+               (user-delete! cfg/db params))]
+     {:stat :ok :res res})))
 
-(defn user-role-set! [{:keys [params] :as req}]
- (dbg params)
+(defn user-role-set! [{:keys [params identity] :as req}]
   (json/generate-string
-   (let [res (user-upd-role! cfg/db params)]
-     {:stat :ok})))
+   (let [username (:username params)
+         user (by-username-user-read cfg/db {:username username})
+         res (if (and (= (:role user) "admin") (not (= (:role identity) "admin")))
+               "Not authorized"
+               (user-upd-role! cfg/db params))]
+     {:stat :ok :res res})))
 
-           
 ;; #### ROUTES
 (defroutes account-routes
-  (GET "/userexists/:username" req (user-exists? req))
-  (POST "/register" req (register! req))
-  (POST "/login" req (login req))
-  (POST "/logout" req (logout! req))
-  (context "/users" [req]
-    (POST "/" req (users-get req))
-    (POST "/delete" req (user-del! req))
-    (POST "/role" req (user-role-set! req))))
+           (GET "/userexists/:username" req (user-exists? req))
+           (POST "/register" req (register! req))
+           (POST "/login" req (login req))
+           (POST "/logout" req (logout! req))
+           (context "/users" [req]
+                    (GET "/" req (users-get req))
+                    (DELETE "/delete" req (user-del! req))
+                    (POST "/role" req (user-role-set! req))))

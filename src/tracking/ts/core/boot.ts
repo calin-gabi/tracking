@@ -9,50 +9,47 @@ from "@angular/http";
 import {Router, Route, ActivatedRoute} from "@angular/router";
 import {BrowserModule} from "@angular/platform-browser";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {AccountModule} from "../account/account.module";
 import {HomeModule} from "../home/home.module";
+import {AccountModule} from "../account/account.module";
 
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
-import {Cfg} from "./config";
+
+// import {CoreModule} from "./core.module";
+import {routing} from "./routing.comp";
 
 import {CoreModule} from "./core.module";
 import {StateServ} from "./state.serv";
-import {routing} from "./routing.comp";
 
 // import {Cfg} from "./config";
 
 @Component({
     selector: "main",
-    templateUrl: "/template?type=main",
-    styleUrls: ["css/main.css"],
+    templateUrl: "views/main.html",
+    styleUrls: [],
     encapsulation: ViewEncapsulation.None,
-    providers: [StateServ]
+    providers: []
 })
 
 @Injectable()
 export class MainComp implements OnInit {
-    private testng = "";
-    constructor(private stateServ: StateServ,
-                private router: Router,
-                private cfg: Cfg) {
+    private trackingng = "";
+    constructor() {
+
     }
 
     ngOnInit() {
-        this.cfg.url = window.location.origin;
-        // console.log(window.location);
-        // console.log(this.cfg.url);
     }
 }
 
 @NgModule({
     imports: [BrowserModule, HttpModule, FormsModule, ReactiveFormsModule, routing,
-            AccountModule, HomeModule, CoreModule],
+            HomeModule, AccountModule, CoreModule],
 
     exports: [],
 
     declarations: [MainComp],
 
-    providers: [Cfg, StateServ],
+    providers: [],
 
     bootstrap: [MainComp]
 })
@@ -60,4 +57,3 @@ export class MainComp implements OnInit {
 export class MainModule {}
 
 platformBrowserDynamic().bootstrapModule(MainModule);
-

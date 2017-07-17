@@ -17,8 +17,7 @@
         "ng2-bootstrap": "node_modules/ng2-bootstrap",
         "angular2-notifications": "node_modules/angular2-notifications",
         "moment": "node_modules/moment",
-        "ng2-uploader": "node_modules/ng2-uploader",
-        "ng2-dropdown": "node_modules/ng2-dropdown",
+        "lodash": "node_modules/lodash/lodash.js",
         "sha256": "node_modules/sha256"
     };
 
@@ -35,10 +34,10 @@
         "isarray": {main: "index.js", defaultExtension: 'js'},
         "js-base64": {main: "base64.js", defaultExtension: "js"},
         "moment": {main: "moment.js", defaultExtension: "js"},
+        "lodash": {main: "lodash.js", defaultExtension: "js"},
         "ng2-bs3-modal": {defaultExtension: "js"},
         "ng2-bootstrap": {defaultExtension: "js"},
         "ng2-dropdown": { main: "index.js", defaultExtension: "js" },
-        "ng2-uploader": {main: "ng2-uploader.js", defaultExtension: "js"},
         "rxjs": {defaultExtension: 'js'},
         "sha256": {main: "lib/sha256.js", defaultExtension: "js"}
     };

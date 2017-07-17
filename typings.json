@@ -6,6 +6,5 @@
     "node": "registry:dt/node#6.0.0+20160807145350"
   },
   "dependencies": {
-    "lodash": "registry:npm/lodash#4.0.0+20160723033700"
   }
 }

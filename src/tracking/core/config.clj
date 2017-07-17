@@ -4,8 +4,6 @@
    [ak-dbg.core :refer :all]
    [environ.core :refer [env]]))
 
-(def auth-uris {:dev "http://localhost:4016"})
-
 (def secret "mysecret")
 
 (defonce db (str "jdbc:postgres://localhost"
@@ -15,6 +13,6 @@
 
 (def trusted-algs #{:bcrypt+sha512})
 
-(def smtp {:host "mail.softdata.ro"
+(def smtp {:host "tech@orkiee.com"
            :user "office@softdata.ro"
-           :pass "softy1964"})
+           :pass "OrkieeRocks2016!"})
