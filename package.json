@@ -43,7 +43,7 @@
     "fullcalendar": "^3.0.1",
     "hover.css": "^2.0.2",
     "isarray": "^2.0.1",
-    "jquery": "^2.2.4",
+    "jquery": "^3.0.0",
     "js-base64": "^2.1.9",
     "moment": "^2.15.1",
     "ng2-bootstrap": "^1.1.16",
